@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import SplashScreen from './components/SplashScreen/HomeSplash';
 import AuthPage from './components/pages/AuthPage';
+import HomePage from '../src/components/pages/HomePage';
 
 const Routes = () => {
   const [currentPage, setCurrentPage] = useState('splash');
@@ -23,7 +24,8 @@ const Routes = () => {
   return (
     <div className="App">
       {currentPage === 'splash' && <SplashScreen navigate={navigate} />}
-      {currentPage === 'auth' && <AuthPage />}
+      {currentPage === 'auth' && <AuthPage navigate={navigate} />}
+      {currentPage === 'home' && <HomePage />}
     </div>
   );
 };
