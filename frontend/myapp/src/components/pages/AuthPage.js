@@ -2,10 +2,10 @@
 import React from 'react';
 import AuthForm from '../auth/AuthForm';
 
-const AuthPage = () => {
+const AuthPage = ({ navigate }) => {
   return (
     <div className="auth-page">
-      <AuthForm />
+      <AuthForm navigate={navigate} />
     </div>
   );
 };
