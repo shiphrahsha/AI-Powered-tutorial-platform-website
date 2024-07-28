@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from .config import Config
 
+
 print("Modules imported")
 
 mongo = PyMongo()
