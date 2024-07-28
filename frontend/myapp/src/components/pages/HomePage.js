@@ -10,7 +10,10 @@ import studentTestimonial from '../assets/background.png';
 import parentTestimonial from '../assets/background.png';
 import tutorTestimonial from '../assets/background.png';
 
-const Homepage = () => {
+const Homepage = ({ navigate }) => {
+    const navigateToLogin = () => {
+      navigate('auth');
+    };
     return (
       <div className="homepage">
         {/* Header Section */}
@@ -37,8 +40,7 @@ const Homepage = () => {
             <h1>Achieve Academic Excellence with AI-Powered Tutoring</h1>
             <p>Personalized learning paths and real-time assistance for students of all ages.</p>
             <div className="cta-buttons">
-              <button className="cta-button">Get Started</button>
-              <button className="cta-button">Sign Up for Free</button>
+              <button className="cta-button" onClick={navigateToLogin}>Get Started</button>
             </div>
           </div>
           <div className="hero-image">
