@@ -3,12 +3,12 @@ import '../pages/HomePage.css';
 
 // Importing assets
 import heroImage from '../assets/background.png';
-import featureIcon1 from '../assets/background.png';
-import featureIcon2 from '../assets/background.png';
-import featureIcon3 from '../assets/background.png';
-import studentTestimonial from '../assets/background.png';
-import parentTestimonial from '../assets/background.png';
-import tutorTestimonial from '../assets/background.png';
+import featureIcon1 from '../assets/1.png';
+import featureIcon2 from '../assets/2.png';
+import featureIcon3 from '../assets/3.png';
+import studentTestimonial from '../assets/4.png';
+import parentTestimonial from '../assets/5.png';
+import tutorTestimonial from '../assets/6.png';
 
 const Homepage = ({ navigate }) => {
     const navigateToLogin = () => {
@@ -23,13 +23,13 @@ const Homepage = ({ navigate }) => {
           </div>
           <nav className="nav">
             <ul>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#courses">Courses</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#features" style={{ color: 'black' }}>Features</a></li>
+              <li><a href="#how-it-works" style={{ color: 'black' }}>How It Works</a></li>
+              <li><a href="#testimonials" style={{ color: 'black' }}>Testimonials</a></li>
+              <li><a href="#courses" style={{ color: 'black' }}>Courses</a></li>
+              <li><a href="#pricing" style={{ color: 'black' }}>Pricing</a></li>
+              <li><a href="#faq" style={{ color: 'black' }}>FAQ</a></li>
+              <li><a href="#contact" style={{ color: 'black' }}>Contact</a></li>
             </ul>
           </nav>
         </header>
@@ -48,8 +48,8 @@ const Homepage = ({ navigate }) => {
           </div>
         </section>
   
-        {/* Features Section */}
-        <section className="features" id="features">
+               {/* Features Section */}
+               <section className="features" id="features">
           <h2>Features</h2>
           <div className="features-container">
             <div className="feature-item">
