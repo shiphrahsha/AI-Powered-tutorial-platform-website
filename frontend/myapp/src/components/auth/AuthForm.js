@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import '../pages/AuthForm.css';
 
 const AuthForm = ({ navigate }) => {
+    const navigateToLogin = () => {
+        navigate('dashboard');
+
+    };
     const [isLogin, setIsLogin] = useState(true);
     const [formData, setFormData] = useState({
       username: '',
@@ -26,7 +30,7 @@ const AuthForm = ({ navigate }) => {
         // Handle login logic here
         console.log('Logging in with:', formData);
         // Simulate successful login
-        navigate('home');
+        navigate('dashboard');
       } else {
         // Handle registration logic here
         console.log('Registering with:', formData);
@@ -83,20 +87,20 @@ const AuthForm = ({ navigate }) => {
                 required
               />
             </div>
-            <button className="submit-button" type="submit">
+            <button className="submit-button" type="submit" onClick={navigateToLogin}>
               {isLogin ? 'Login' : 'Register'}
             </button>
             <div className="toggle-link">
-            {isLogin ? (
-              <button type="button" onClick={toggleForm} className="link-button">
-                New user? Create an account
-              </button>
-            ) : (
-              <button type="button" onClick={toggleForm} className="link-button">
-                Already a user? Log in
-              </button>
-            )}
-          </div>
+              {isLogin ? (
+                <button type="button" onClick={toggleForm} className="link-button">
+                  New user? Create an account
+                </button>
+              ) : (
+                <button type="button" onClick={toggleForm} className="link-button">
+                  Already a user? Log in
+                </button>
+              )}
+            </div>
           </form>
         </div>
       </div>
