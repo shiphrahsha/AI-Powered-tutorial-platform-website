@@ -3,14 +3,17 @@ import '../pages/HomePage.css';
 
 // Importing assets
 import heroImage from '../assets/background.png';
-import featureIcon1 from '../assets/background.png';
-import featureIcon2 from '../assets/background.png';
-import featureIcon3 from '../assets/background.png';
-import studentTestimonial from '../assets/background.png';
-import parentTestimonial from '../assets/background.png';
-import tutorTestimonial from '../assets/background.png';
+import featureIcon1 from '../assets/1.png';
+import featureIcon2 from '../assets/2.png';
+import featureIcon3 from '../assets/3.png';
+import studentTestimonial from '../assets/4.png';
+import parentTestimonial from '../assets/5.png';
+import tutorTestimonial from '../assets/6.png';
 
-const Homepage = () => {
+const Homepage = ({ navigate }) => {
+    const navigateToLogin = () => {
+      navigate('auth');
+    };
     return (
       <div className="homepage">
         {/* Header Section */}
@@ -21,10 +24,10 @@ const Homepage = () => {
           <nav className="nav">
             <ul>
               <li><a href="#features">Features</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#how-it-works" >How It Works</a></li>
+              <li><a href="#testimonials" >Testimonials</a></li>
               <li><a href="#courses">Courses</a></li>
-              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#pricing" >Pricing</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
@@ -37,8 +40,7 @@ const Homepage = () => {
             <h1>Achieve Academic Excellence with AI-Powered Tutoring</h1>
             <p>Personalized learning paths and real-time assistance for students of all ages.</p>
             <div className="cta-buttons">
-              <button className="cta-button">Get Started</button>
-              <button className="cta-button">Sign Up for Free</button>
+              <button className="cta-button" onClick={navigateToLogin}>Get Started</button>
             </div>
           </div>
           <div className="hero-image">
@@ -46,8 +48,8 @@ const Homepage = () => {
           </div>
         </section>
   
-        {/* Features Section */}
-        <section className="features" id="features">
+               {/* Features Section */}
+               <section className="features" id="features">
           <h2>Features</h2>
           <div className="features-container">
             <div className="feature-item">

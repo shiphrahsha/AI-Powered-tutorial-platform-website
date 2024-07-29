@@ -1,78 +1,101 @@
-/* src/pages/AuthForm.css */
-
+/* /* src/pages/AuthForm.css */
+/* Authentication Container */
 .auth-container {
   display: flex;
   height: 100vh;
   background-color: #0056b3;
   background-image: url('../assets/background.png');
   background-size: cover;
+  background-position: center;
 }
 
-
+/* Card Container */
 .auth-card-container {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
+/* Authentication Card */
 .auth-card {
   width: 100%;
   max-width: 400px;
-  padding: 60px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #ffffff, #000000);
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-.welcome-message {
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  border-radius: 12px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
+/* Welcome Message */
+.welcome-message {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Toggle Button */
 .toggle-button {
   display: block;
   margin: 0 auto 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .toggle-button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
+/* Form Group */
 .auth-form .form-group {
   margin-bottom: 15px;
 }
 
+/* Form Label */
 .auth-form .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
+/* Form Input */
 .auth-form .form-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
 }
 
+.auth-form .form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit Button */
 .submit-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #28a745;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-button:hover {
   background-color: #218838;
+  transform: scale(1.05);
 }
