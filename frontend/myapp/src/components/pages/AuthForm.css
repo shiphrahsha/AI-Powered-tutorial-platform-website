@@ -1,4 +1,4 @@
-/* /* src/pages/AuthForm.css */
+/* src/pages/AuthForm.css */
 /* Authentication Container */
 .auth-container {
   display: flex;
@@ -7,6 +7,8 @@
   background-image: url('../assets/background.png');
   background-size: cover;
   background-position: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Card Container */
@@ -15,8 +17,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  
+  padding: 20px;
+  border-radius: 12px;
 }
 
 /* Authentication Card */
@@ -59,9 +62,9 @@
 /* Form Group */
 .auth-form .form-group {
   margin-bottom: 15px;
+  position: relative;
 }
 
-/* Form Label */
 .auth-form .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -83,6 +86,15 @@
   outline: none;
 }
 
+/* Icon in input */
+.auth-form .form-group i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
 /* Submit Button */
 .submit-button {
   width: 100%;
@@ -98,4 +110,32 @@
 .submit-button:hover {
   background-color: #218838;
   transform: scale(1.05);
+}
+
+/* Form Footer */
+.form-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forgot-password {
+  color: #007bff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }

@@ -1,95 +1,71 @@
-// src/components/Dashboard/Dashboard.js
+// // src/components/Dashboard.js
 import React, { useState } from 'react';
-import './Dashboard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faHome, faBook, faUser, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import '../Dashboard/Dashboard.css';
 
-const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState('home');
+const courses = [
+  { id: 1, title: 'Java Basics', description: 'Introduction to Java programming.' },
+  { id: 2, title: 'Advanced JavaScript', description: 'Deep dive into JavaScript.' },
+  { id: 3, title: 'Python for Data Science', description: 'Learn Python for data analysis.' },
+  { id: 4, title: 'React for Beginners', description: 'Getting started with React.' },
+  { id: 5, title: 'Flutter Mobile Development', description: 'Building mobile apps with Flutter.' },
+  { id: 6, title: 'MongoDB Essentials', description: 'Introduction to MongoDB.' },
+  { id: 7, title: 'HTML & CSS Fundamentals', description: 'Building blocks of the web.' },
+  { id: 8, title: 'Node.js for Backend', description: 'Building server-side applications.' },
+  { id: 9, title: 'Machine Learning Basics', description: 'Introduction to machine learning.' },
+  { id: 10, title: 'DevOps Principles', description: 'Fundamentals of DevOps.' },
+];
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return <Home />;
-      case 'students':
-        return <Students />;
-      case 'courses':
-        return <Courses />;
-      case 'performance':
-        return <Performance />;
-      case 'settings':
-        return <Settings />;
-      default:
-        return <Home />;
-    }
+
+
+
+const Dashboard = ({navigate}) => {
+  const navigateToLogin = () => {
+    navigate('Aicourse');
+  };
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    <div className="dashboard">
-      <Header />
-      <div className="main">
-        <Sidebar setActiveTab={setActiveTab} activeTab={activeTab} />
-        <div className="content">
-          {renderContent()}
-        </div>
+    <div className="dashboard-container">
+      <div className="hamburger-menu">
+        <FontAwesomeIcon icon={faBars} onClick={toggleSidebar} />
       </div>
+      <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <h2>Dashboard</h2>
+        <ul>
+          <li><FontAwesomeIcon icon={faHome} /> Home</li>
+          <li><FontAwesomeIcon icon={faBook} /> Courses</li>
+          <li><FontAwesomeIcon icon={faUser} /> Profile</li>
+          <li><FontAwesomeIcon icon={faCog} /> Settings</li>
+          <li><FontAwesomeIcon icon={faSignOutAlt} /> Statistics</li>
+          <li><FontAwesomeIcon icon={faSignOutAlt} /> Logout</li>
+        </ul>
+      </aside>
+      <main className="main-content">
+        <header className="dashboard-header">
+          <h1>Welcome to Your Learning Dashboard</h1>
+          <p>Explore our available courses and enhance your skills.</p>
+        </header>
+        <div className="courses-grid">
+          {courses.map(course => (
+            <div key={course.id} className="course-card">
+              <h2>{course.title}</h2>
+              <p>{course.description}</p>
+              <button className="enroll-button">Enroll Now</button>
+            </div>
+          ))}
+        </div>
+        <div className="courses-grid">
+        <button onClick={navigateToLogin}>click to romance with AI</button>
+        </div>
+      </main>
     </div>
   );
 };
-
-const Header = () => (
-  <header className="header">
-    <h1>AI-Powered Tutoring Platform</h1>
-  </header>
-);
-
-const Sidebar = ({ setActiveTab, activeTab }) => (
-  <nav className="sidebar">
-    <ul>
-      <li className={activeTab === 'home' ? 'active' : ''} onClick={() => setActiveTab('home')}>Home</li>
-      <li className={activeTab === 'students' ? 'active' : ''} onClick={() => setActiveTab('students')}>Students</li>
-      <li className={activeTab === 'courses' ? 'active' : ''} onClick={() => setActiveTab('courses')}>Courses</li>
-      <li className={activeTab === 'performance' ? 'active' : ''} onClick={() => setActiveTab('performance')}>Performance</li>
-      <li className={activeTab === 'settings' ? 'active' : ''} onClick={() => setActiveTab('settings')}>Settings</li>
-    </ul>
-  </nav>
-);
-
-const Home = () => (
-  <div className="tab-content">
-    <h2>Welcome to the AI-Powered Tutoring Platform</h2>
-    <p>Here you can manage students, courses, view performance metrics, and configure settings.</p>
-  </div>
-);
-
-const Students = () => (
-  <div className="tab-content">
-    <h2>Student Management</h2>
-    {/* Add your student management content here */}
-    <p>Manage student profiles, track progress, and communicate with students.</p>
-  </div>
-);
-
-const Courses = () => (
-  <div className="tab-content">
-    <h2>Course Management</h2>
-    {/* Add your course management content here */}
-    <p>Manage courses, add new content, and organize lessons.</p>
-  </div>
-);
-
-const Performance = () => (
-  <div className="tab-content">
-    <h2>Performance Metrics</h2>
-    {/* Add your performance metrics content here */}
-    <p>View student performance, analyze data, and generate reports.</p>
-  </div>
-);
-
-const Settings = () => (
-  <div className="tab-content">
-    <h2>Settings</h2>
-    {/* Add your settings content here */}
-    <p>Configure platform settings, manage user roles, and update preferences.</p>
-  </div>
-);
 
 export default Dashboard;
